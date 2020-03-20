@@ -1,21 +1,12 @@
 package br.com.rsinet.hub_bdd.stepDefinition;
 
-import java.io.File;
-
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.cucumber.listener.Reporter;
-import com.google.common.io.Files;
-
+import Contexto.ContextoTeste;
 import br.com.rsinet.hub_bdd.pageObject.PaginaDeProdutos;
 import br.com.rsinet.hub_bdd.pageObject.PaginaInicial;
 import br.com.rsinet.hub_bdd.utilities.DriverFactory;
-import br.com.rsinet.hub_bdd.utilities.TestContext;
-import br.com.rsinet.hub_bdd.utilities.Wait;
-import cucumber.api.Scenario;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
@@ -25,9 +16,14 @@ public class CompraStep {
 	private static PaginaInicial paginaInicial;
 	private static PaginaDeProdutos paginaDeProdutos;
 	private static WebDriverWait wait;
-	private static TestContext testContext;
-	private static Scenario scenario;
-
+	private ContextoTeste testeContexto;
+	
+//	public CompraStep(ContextoTeste contexto) {
+//		testeContexto = contexto;
+//		paginaInicial = testeContexto.getPageObjectManager().getPaginaInicial();
+//		paginaDeProdutos = testeContexto.getPageObjectManager().getPaginaDeProdutos();
+//		driver = testeContexto.getWebDriverManager().getDriver();
+//	}
 	@Dado("^que estou na pagina inicial$")
 	public void que_estou_na_pagina_inicial() throws Throwable {
 		driver = new DriverFactory().iniciaNavegador("chrome", "https://www.advantageonlineshopping.com/#/");
@@ -77,6 +73,6 @@ public class CompraStep {
 
 	@Entao("^eu valido a compra feita$")
 	public void eu_valido_a_compra_feita() throws Throwable {
-		DriverFactory.encerraNavegador();
+		//DriverFactory.encerraNavegador();
 	}
 }

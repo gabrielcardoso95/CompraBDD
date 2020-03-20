@@ -53,7 +53,7 @@ public class PaginaInicial {
 	}
 
 	public void clicaMenuSpeakers() throws InterruptedException {
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		menuSpeakers.click();
 	}
 
